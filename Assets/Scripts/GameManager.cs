@@ -6,9 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public GameObject gameOver;
     public bool isGameOver;
-    public GameObject spawner;
     public float time { get; private set; }
 
     
