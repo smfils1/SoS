@@ -9,17 +9,15 @@ public class PlayerInput : MonoBehaviour
     private PlayerControls controls;
     public Vector2 move;
     public Vector2 look;
-    public float mouseX { get; private set; }
-    public float mouseY { get; private set; }
-    public float moveX { get; private set; }
-    public float moveZ { get; private set; }
-
 
     private void Awake()
     {
-        if(GameManager.instance.controls == "gamepad")
+        controls = new PlayerControls();
+
+            Debug.Log(GameManager.instance.controls);
+
+        if (GameManager.instance.controls == "gamepad")
         {
-            controls = new PlayerControls();
             controls.Gameplay.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
             controls.Gameplay.Move.canceled += ctx => move = Vector2.zero;
             controls.Gameplay.Look.performed += ctx => look = ctx.ReadValue<Vector2>();
@@ -30,12 +28,11 @@ public class PlayerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.controls == "gamepad")
+
+        if (GameManager.instance.controls == "keyboard")
         {
-            mouseX = Input.GetAxis("Mouse X");
-            mouseY = Input.GetAxis("Mouse Y");
-            moveX = Input.GetAxis("Horizontal");
-            moveZ = Input.GetAxis("Vertical");
+            look = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+            move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         }
 
     }

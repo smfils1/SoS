@@ -7,12 +7,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public bool isGameOver;
-    public string controls = "gamepad";
+    public string controls;
     public float time { get; private set; }
 
     
     void Awake()
     {//Singleton Pattern
+        controls = "gamepad";
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
