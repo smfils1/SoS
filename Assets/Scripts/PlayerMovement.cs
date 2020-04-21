@@ -20,12 +20,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {//
-        Vector3 moveDirectionX = transform.right * playerInput.moveX;
+        /*Vector3 moveDirectionX = transform.right * playerInput.moveX;
         Vector3 moveDirectionZ = transform.forward * playerInput.moveZ;
-        Vector3 moveDirection = moveDirectionX + moveDirectionZ;
+        Vector3 moveDirection = moveDirectionX + moveDirectionZ;*/
+        Vector3 moveDirectionX = transform.right * playerInput.move.x;
+        Vector3 moveDirectionY = transform.forward * playerInput.move.y;
+        Vector3 moveDirection = moveDirectionX + moveDirectionY;
         controller.SimpleMove(moveDirection * speed);
-
     }
+     
 
 
     // Update is called once per frame

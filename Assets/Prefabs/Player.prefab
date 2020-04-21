@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 846705650654801449}
   - component: {fileID: 846705650654801446}
   - component: {fileID: 846705650654801450}
+  - component: {fileID: 4122793420719757659}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -92,6 +93,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
   speed: 10
+--- !u!114 &4122793420719757659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846705650654801447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce309a3f0ac4a38479e56e26c0bae42a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vision: {fileID: 846705651050637845}
+  mouseSensitivity: 100
+  body: {fileID: 0}
+  speed: 10
 --- !u!1 &846705651050637840
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +120,6 @@ GameObject:
   - component: {fileID: 846705651050637845}
   - component: {fileID: 846705651050637842}
   - component: {fileID: 846705651050637843}
-  - component: {fileID: 846705651050637844}
   m_Layer: 0
   m_Name: Vision
   m_TagString: MainCamera
@@ -176,21 +192,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 846705651050637840}
   m_Enabled: 1
---- !u!114 &846705651050637844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846705651050637840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce309a3f0ac4a38479e56e26c0bae42a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseSensitivity: 100
-  body: {fileID: 846705650654801451}
-  speed: 10
 --- !u!1 &846705651260910784
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public bool isGameOver;
+    public string controls = "gamepad";
     public float time { get; private set; }
 
     
