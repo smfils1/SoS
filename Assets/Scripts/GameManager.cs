@@ -7,13 +7,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public bool isGameOver;
-    public string controls;
+    public string controls { get; private set; }
     public float time { get; private set; }
 
     
     void Awake()
     {//Singleton Pattern
-        controls = "gamepad";
+        controls = PlayerPrefs.HasKey("controls") ? getControls() : "keyboard";
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
@@ -59,7 +59,21 @@ public class GameManager : MonoBehaviour
 
     public void StartMenu()
     {//Load main menu
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("Main");
+    }
+
+    public void useGameControls(string gameControls)
+    {//
+        controls = gameControls;
+        PlayerPrefs.SetString("controls", gameControls);
+        
+    }
+
+    public string getControls()
+    {//
+        return PlayerPrefs.GetString("controls");
+        
     }
 
 

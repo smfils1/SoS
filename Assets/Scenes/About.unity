@@ -373,9 +373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1331376e233ed224b98ac6b421eaba6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOver: {fileID: 0}
   isGameOver: 0
-  spawner: {fileID: 0}
+  controls: 
 --- !u!4 &866041424
 Transform:
   m_ObjectHideFlags: 0
@@ -403,7 +402,7 @@ GameObject:
   - component: {fileID: 931077617}
   - component: {fileID: 931077616}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

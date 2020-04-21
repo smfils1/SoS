@@ -12,9 +12,7 @@ public class PlayerInput : MonoBehaviour
 
     private void Awake()
     {
-        controls = new PlayerControls();
-
-            Debug.Log(GameManager.instance.controls);
+        controls = new PlayerControls();          
 
         if (GameManager.instance.controls == "gamepad")
         {
