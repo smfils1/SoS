@@ -35,10 +35,14 @@ The game takes place on a stage, as seen in Figure 1. This stage is surrounded b
 ## Dynamics
 
 
-## UI
+## UI & Aesthetics
+
+As shown in Figure 2, the character & enemies are designed with simplicity in mind. This allows us to focus on the mechanics that will make an exciting game. Both the enemies & player are just colored capsules. To signal danger, the enemy is red. The same ideas are applied to the menu UX. The transitions between different scenes in the game are so simple that it makes navigation intuitive. The start scene is the main menu that has three buttons; play, settings, and about. Play will transition the player to the gameplay. If game controls haven't been set up, the default control is the keyboard. However, in the settings, there is also the option to change to a gamepad and controller sensitivity. As one is playing the game, if the player is killed, the game ends with a game-over menu that has three buttons; retry, main menu, and exit. Retry will restart the game. Main menu will redirect one to the starting menu. Lastly, the exit button will close the game.
 
 
 ## Figures
 
 ![drawing](https://i.imgur.com/qnyP7O2.png)
+![drawing](https://i.imgur.com/zkVP1iN.png)
+
 
