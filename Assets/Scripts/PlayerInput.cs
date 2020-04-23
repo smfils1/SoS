@@ -9,6 +9,7 @@ public class PlayerInput : MonoBehaviour
     private PlayerControls controls;
     public Vector2 move;
     public Vector2 look;
+    public bool isShooting;
 
     private void Awake()
     {
@@ -34,6 +35,7 @@ public class PlayerInput : MonoBehaviour
         {
             look = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
             move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            isShooting = Input.GetMouseButtonDown(0);
         }
 
     }
