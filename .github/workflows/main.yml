@@ -1,0 +1,57 @@
+name: Build project
+
+on:
+  push: { branches: [master] }
+
+env:
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+
+jobs:
+  buildAndTestForSomePlatforms:
+    name: Build for ${{ matrix.targetPlatform }} on version ${{ matrix.unityVersion }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        unityVersion:
+          - 2019.3.1f1
+        targetPlatform:
+          - WebGL # WebGL.
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          lfs: true
+           # Cache
+      - uses: actions/cache@v1.1.0
+        with:
+          path: Library
+          key: Library
+
+      - uses: webbertakken/unity-test-runner@v1.3
+        id: testRunner
+        with:
+          projectPath: ${{ matrix.projectPath }}
+          unityVersion: ${{ matrix.unityVersion }}
+      - uses: actions/upload-artifact@v1
+        with:
+          name: Test results (all modes)
+          path: ${{ steps.testRunner.outputs.artifactsPath }}
+      - uses: webbertakken/unity-builder@v0.10
+        with:
+          projectPath: ${{ matrix.projectPath }}
+          unityVersion: ${{ matrix.unityVersion }}
+          targetPlatform: ${{ matrix.targetPlatform }}
+
+      - run: ls
+      - uses: s0/git-publish-subdir-action@master
+        env:
+          REPO: self
+          BRANCH: gh-pages
+          FOLDER: build/WebGL/WebGL
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v1
+        with:
+          name: Build
+          path: build
+
+    
