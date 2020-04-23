@@ -19,7 +19,12 @@ public class PlayerVision : MonoBehaviour
         //Initialize fields
         playerInput = GetComponent<PlayerInput>();
         visionCenter = transform.localRotation;
-        if (GameManager.instance.controls == "keyboard") {
+    }
+
+    private void Start()
+    {
+        if (GameManager.instance.controls == "keyboard")
+        {
             Cursor.lockState = CursorLockMode.Locked;
         }
     }

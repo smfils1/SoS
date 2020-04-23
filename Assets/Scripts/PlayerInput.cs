@@ -12,7 +12,10 @@ public class PlayerInput : MonoBehaviour
 
     private void Awake()
     {
-        controls = new PlayerControls();          
+        controls = new PlayerControls();
+    }
+    private void Start()
+    {
 
         if (GameManager.instance.controls == "gamepad")
         {
@@ -37,12 +40,14 @@ public class PlayerInput : MonoBehaviour
 
     void OnEnable()
     {
-       controls.Gameplay.Enable();
+        controls.Gameplay.Enable();
     }
 
     void OnDisable()
     {
-       controls.Gameplay.Disable();
+   
+            controls.Gameplay.Disable();
+        
     }
 }
 
