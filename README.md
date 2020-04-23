@@ -1,3 +1,4 @@
+![Unity Build](https://github.com/smfils1/SoS/workflows/Unity%20Build/badge.svg)
 # [Demo](https://smfils1.github.io/SoS/)
 
 ## Running Locally
