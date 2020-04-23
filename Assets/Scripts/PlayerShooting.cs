@@ -23,8 +23,9 @@ public class PlayerShooting : MonoBehaviour
             RaycastHit target;
             
             if (Physics.Raycast(vision.position, vision.forward, out target, Mathf.Infinity))
-            { 
-                Debug.Log(target.collider.name);
+            {
+                IKillable enemy = target.collider.GetComponent<IKillable>();
+                if (enemy != null) enemy.decreaseHealth(10);
             }
         }
         {
