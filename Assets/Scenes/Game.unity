@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vision: {fileID: 175246327}
+  fireRate: 15
 --- !u!1001 &439397466
 PrefabInstance:
   m_ObjectHideFlags: 0

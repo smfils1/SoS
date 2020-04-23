@@ -24,18 +24,19 @@ public class PlayerInput : MonoBehaviour
             controls.Gameplay.Move.canceled += ctx => move = Vector2.zero;
             controls.Gameplay.Look.performed += ctx => look = ctx.ReadValue<Vector2>();
             controls.Gameplay.Look.canceled += ctx => look = Vector2.zero;
+            controls.Gameplay.Shoot.performed += ctx => isShooting = ctx.ReadValueAsButton();
+            controls.Gameplay.Shoot.canceled += ctx => isShooting = false;
         }
 
     }
     // Update is called once per frame
     void Update()
     {
-
         if (GameManager.instance.controls == "keyboard")
         {
             look = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
             move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-            isShooting = Input.GetMouseButtonDown(0);
+            isShooting = Input.GetButton("Fire1");
         }
 
     }
