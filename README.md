@@ -8,11 +8,18 @@ git clone https://github.com/smfils1/SoS # or clone your own fork
 ```
 Open project using UnityHub or Unity. The project is being developed in Unity 2019.3.1f1
 
+## CI/CD
+
+We using Github Actions & Github Pages to build & deploy [SoS](https://smfils1.github.io/SoS-Website/)
+
+![drawing](https://i.imgur.com/6BNS8mS.png)
+
+
 # Game Design Document
 
 ## Summary
 
-Shoot or Survive is an open-source game of survival. You're either the one shooting or the one running away. The choice is yours. This plug and play FPS web game is a battle between you and your enemies that require accuracy & speed. The ability to attack or avoid enemies with different controls leads to a unique web experience.
+Shoot or Survive is an open-source web game of survival. You're either the one shooting or the one running away. The choice is yours. This plug and play FPS web game is a battle between you and your enemies that require accuracy & speed. The ability to attack or avoid enemies with different controls leads to a unique web experience.
 
 ## Story
 
@@ -26,6 +33,9 @@ The game takes place on a stage, as seen in Figure 1. This stage is surrounded b
 
 ### Movement:
 
+The player can move in the x & z-axis and rotate as shown in Figure #. If the up, down, left, and right arrow keys are pressed the player moves forward, backward, left, and right respectively at a constant speed. Alternatively, if the player chooses to use a gamepad, the player can use the left stick to move. The enemies can only move in the x & z-axis while chasing the player. To look around, the player must rotate itself. More specifically, the player vision, which is the main camera, has to rotate around the y-axis to look around horizontally. To look vertically the player's vision has to move around the x-axis. Both movements are controlled by sensitivity. The player can rotate horizontally without any limits. However, there is some limitation to the player's ability to rotate vertically. The rotation must be clamped so the player can only look about 90 degrees about its line of vision either up or down, as shown in Figure #.
+
+### Shooting:
 
 ### Randomization:
 
@@ -44,6 +54,7 @@ As shown in Figure 2, the character & enemies are designed with simplicity in mi
 ## Figures
 
 ![drawing](https://i.imgur.com/qnyP7O2.png)
+![drawing](https://i.imgur.com/oJuMwzn.png)
 ![drawing](https://i.imgur.com/zkVP1iN.png)
 
 
