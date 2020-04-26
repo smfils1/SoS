@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public bool isGameOver;
     public string controls { get; private set; }
-    public float time { get; private set; }
+    public int time { get; private set; }
     public int maxTime = 30;
 
 
