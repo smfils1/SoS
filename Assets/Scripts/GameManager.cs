@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour
     public bool isGameOver;
     public string controls { get; private set; }
     public float time { get; private set; }
+    public int maxTime = 30;
 
-    
+
+
     void Awake()
     {//Singleton Pattern
         controls = PlayerPrefs.HasKey("controls") ? getControls() : "keyboard";
@@ -31,10 +33,23 @@ public class GameManager : MonoBehaviour
     {//Initialize the Game
         isGameOver = false;
         time = 0;
+        StartCoroutine("Clock");
+
 
     }
 
- 
+
+    IEnumerator Clock()
+    {
+        while (true)
+        {
+            Debug.Log(time);
+
+            yield return new WaitForSeconds(1);
+            time += 1;
+        }
+    }
+
     public void StartGame()
     {//Initialize default game state & Load game. Resume time if needed
         SceneManager.LoadScene("Game");
@@ -88,5 +103,12 @@ public class GameManager : MonoBehaviour
         {
             StartMenu();
         }
+        if (GameManager.instance.isGameOver)
+
+        {//Stop spawning where game over
+
+            StopCoroutine("Clock");
+        }
+        
     }
 }
