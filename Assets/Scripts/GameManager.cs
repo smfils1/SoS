@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public bool isGameOver;
     public string controls { get; private set; }
     public int time { get; private set; }
+    public int level { get; private set; }
     public int maxTime = 30;
 
 
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
     {//Initialize the Game
         isGameOver = false;
         time = 0;
+        level = 1;
         StartCoroutine("Clock");
 
 
@@ -43,10 +45,16 @@ public class GameManager : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log(time);
-
             yield return new WaitForSeconds(1);
-            time += 1;
+            if(time % maxTime == 0 && time != 0)
+            {
+                time = 0;
+                level += 1;
+            }else
+            {
+                time += 1;
+            }
+            Debug.Log(string.Format("Level: {0}, Time: {1}", level, time));
         }
     }
 

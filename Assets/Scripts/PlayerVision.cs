@@ -8,11 +8,12 @@ public class PlayerVision : MonoBehaviour
 
     private PlayerInput playerInput;
     public Transform vision;
+    public Transform weapon;
     public Quaternion visionCenter;
     public float mouseSensitivity = 100f;
     private CharacterController controller;
     public float speed = 10f;
-    private float visionLimit = 70f;
+    private float visionLimit = 25f;
 
     private void Awake()
     {
@@ -43,7 +44,9 @@ public class PlayerVision : MonoBehaviour
         if (Quaternion.Angle(visionCenter, rotation) < visionLimit)
         {
             vision.localRotation = rotation;
+            weapon.localRotation = vision.localRotation;
         }
+
     }
 
     private void RotateX()
