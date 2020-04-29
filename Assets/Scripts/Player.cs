@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public static Player instance;
+    public Vector3 pos;
 
     void Awake()
     {//Singleton Pattern
@@ -16,8 +17,11 @@ public class Player : MonoBehaviour
         {
             instance = this;
         }
+    }
 
-
+    void Update()
+    {
+        pos = transform.position;
     }
 
 }
