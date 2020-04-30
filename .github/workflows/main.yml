@@ -43,6 +43,15 @@ jobs:
           targetPlatform: ${{ matrix.targetPlatform }}
 
       - run: ls
+    # Runs a set of commands using the runners shell
+      - name: Notify SoS Web
+        run:  |
+            curl -X POST https://api.github.com/repos/${{secrets.GH_USERNAME}}/${{secrets.UNITY_WEB}}/dispatches \
+            -H 'Accept: application/vnd.github.everest-preview+json' \
+            -u "${{secrets.GH_USERNAME}}:${{secrets.PAT_TOKEN}}" \
+            --data '{"event_type": "update-web", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
+            
+            
       - uses: s0/git-publish-subdir-action@master
         env:
           REPO: self
