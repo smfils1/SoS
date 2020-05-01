@@ -53,7 +53,7 @@ jobs:
           git config --global user.email ${{secrets.GH_EMAIL}}
           git config --global user.name ${{secrets.GH_USERNAME}}
           timestamp=$(date -u)
-          mv build unity          
+          sudo cp -avr build unity          
           git add unity
           git commit -m "Automated publish: ${timestamp} ${GITHUB_SHA}" || exit 0
           git pull --rebase publisher master
