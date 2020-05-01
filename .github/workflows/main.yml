@@ -43,7 +43,7 @@ jobs:
           targetPlatform: ${{ matrix.targetPlatform }}
 
     # Runs a set of commands using the runners shell
-      - name: Push Build to Repo
+      - name: Push Build to Master
         run: |
           remote_repo="https://${GITHUB_ACTOR}:${{secrets.PAT_TOKEN}}@github.com/${GITHUB_REPOSITORY}.git"
           git config http.sslVerify false
@@ -63,7 +63,6 @@ jobs:
             -H 'Accept: application/vnd.github.everest-preview+json' \
             -u "${{secrets.GH_USERNAME}}:${{secrets.PAT_TOKEN}}" \
             --data '{"event_type": "update-web", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
-            
             
       - uses: s0/git-publish-subdir-action@master
         env:
