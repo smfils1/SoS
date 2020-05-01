@@ -42,7 +42,6 @@ jobs:
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
 
-      - run: ls
     # Runs a set of commands using the runners shell
       - name: Push Build to Repo
         run: |
