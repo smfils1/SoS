@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IKillable
 {
     public static Player instance;
     public Vector3 pos;
+    public float health = 100f;
 
     void Awake()
     {//Singleton Pattern
@@ -18,6 +19,17 @@ public class Player : MonoBehaviour
             instance = this;
         }
     }
+
+    public void decreaseHealth(int damage)
+    {
+        health -= damage;
+    }
+
+    public bool isDead()
+    {
+        return health <= 0;
+    }
+
 
     void Update()
     {

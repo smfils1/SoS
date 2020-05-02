@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {//Initialize the Game
         isGameOver = false;
-        time = 0;
+        time = maxTime;
         level = 1;
         StartCoroutine("Clock");
 
@@ -46,13 +46,13 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1);
-            if(time % maxTime == 0 && time != 0)
+            if(time % maxTime == 0 && time != 30)
             {
-                time = 0;
+                time = maxTime;
                 level += 1;
             }else
             {
-                time += 1;
+                time -= 1;
             }
         }
     }
