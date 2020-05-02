@@ -54,7 +54,6 @@ public class GameManager : MonoBehaviour
             {
                 time += 1;
             }
-            Debug.Log(string.Format("Level: {0}, Time: {1}", level, time));
         }
     }
 
