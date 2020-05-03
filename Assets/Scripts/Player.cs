@@ -30,10 +30,14 @@ public class Player : MonoBehaviour, IKillable
         return health <= 0;
     }
 
-
     void Update()
     {
         pos = transform.position;
+        
+        if(pos.y < -10)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
     }
 
 }

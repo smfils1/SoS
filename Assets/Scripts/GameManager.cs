@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public int time { get; private set; }
     public int level { get; private set; }
     public int maxTime = 30;
-
+    //public GameObject Game_Over;
 
 
     void Awake()
@@ -32,6 +32,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {//Initialize the Game
+       // Game_Over = GameObject.Find("GameOver");
+        //Game_Over.SetActive(false);
         isGameOver = false;
         time = maxTime;
         level = 1;
@@ -98,6 +100,25 @@ public class GameManager : MonoBehaviour
         
     }
 
+    //Game Over Menu
+    public void EndGame()
+    {
+        isGameOver = true;
+        if(isGameOver == true)
+        {
+            isGameOver = false;
+            Debug.Log("GAME OVER");
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene("GameOver");
+        }
+
+    }
+
+    //Restart Function
+    public void Restart()
+    {
+        SceneManager.LoadScene("Game");
+    }
 
     // Update is called once per frame
     void Update()
