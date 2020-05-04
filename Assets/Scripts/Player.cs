@@ -38,6 +38,18 @@ public class Player : MonoBehaviour, IKillable
         {
             FindObjectOfType<GameManager>().EndGame();
         }
+
+        if (isDead())
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            decreaseHealth(10);
+        }
+    }
 }
