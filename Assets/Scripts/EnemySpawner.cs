@@ -4,24 +4,33 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public static EnemySpawner instance;
     public GameObject EnemyPrefab;
-
     public Vector2 StageSize;
 
-    public float RoundStartTime;
+    private float RoundStartTime;
+    private int spawnTableCounter;
+    private float[] spawnTable;
+    private List<GameObject> spawnedEnemies;
 
-    int spawnTableCounter = 0;
-    float[] spawnTable = new float[]
-    {
-        //spawn_times
-        2f, 4f, 6f, 8f, 10f, 12f, 14f, 16f, 18f, 20f,
-    };
+    void Awake()
+    {//Singleton Pattern
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         //tmp round start time, set to current time at start of round
-        RoundStartTime = Time.time;
+        spawnedEnemies = new List<GameObject>();
+        FillSpawnTable();
     }
 
     // Update is called once per frame
@@ -29,7 +38,9 @@ public class EnemySpawner : MonoBehaviour
     {
         if (spawnTableCounter < spawnTable.Length && (Time.time - RoundStartTime) > spawnTable[spawnTableCounter])
         {
-            Instantiate(EnemyPrefab).transform.position = GetSpawnPoint();
+            GameObject enemy = Instantiate(EnemyPrefab);
+            enemy.transform.position = GetSpawnPoint();
+            spawnedEnemies.Add(enemy);
             spawnTableCounter++;
         }
     }
@@ -106,5 +117,33 @@ public class EnemySpawner : MonoBehaviour
         }
 
         return spawnPoint;
+    }
+
+    public void FillSpawnTable()
+    {
+        // kill all enemies on the stage at end of round
+        foreach (GameObject enemy in spawnedEnemies)
+        {
+            Destroy(enemy);
+        }
+        spawnedEnemies.Clear();
+
+        // update spawn table
+        int level = GameManager.instance.level;
+        int enemiesToSpawn = 9 + level;
+        float spawnRate = 20f / ((float)enemiesToSpawn);
+        spawnTable = new float[enemiesToSpawn];
+
+        float spawnTime = 2f;
+        for (int i = 0; i < spawnTable.Length; i++)
+        {
+            spawnTable[i] = spawnTime;
+            spawnTime += spawnRate;
+        }
+
+        // reset variables
+        RoundStartTime = Time.time;
+        spawnTableCounter = 0;
+        spawnedEnemies = new List<GameObject>();
     }
 }

@@ -52,7 +52,9 @@ public class GameManager : MonoBehaviour
             {
                 time = maxTime;
                 level += 1;
-            }else
+                EnemySpawner.instance.FillSpawnTable();
+            }
+            else
             {
                 time -= 1;
             }
