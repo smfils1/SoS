@@ -10,7 +10,6 @@ public class PlayerVision : MonoBehaviour
     public Transform vision;
     public Transform weapon;
     public Quaternion visionCenter;
-    public float mouseSensitivity = 100f;
     private CharacterController controller;
     public float speed = 10f;
     private float visionLimit = 25f;
@@ -38,7 +37,7 @@ public class PlayerVision : MonoBehaviour
 
     private void RotateY()
     {
-        float lookY = playerInput.look.y * mouseSensitivity * Time.deltaTime;
+        float lookY = playerInput.look.y * GameManager.instance.ySensitivity * Time.deltaTime * 100f;
         Quaternion angle = Quaternion.AngleAxis(lookY, -Vector3.right);
         Quaternion rotation = vision.localRotation * angle;
         if (Quaternion.Angle(visionCenter, rotation) < visionLimit)
@@ -51,7 +50,7 @@ public class PlayerVision : MonoBehaviour
 
     private void RotateX()
     {
-        float lookX = playerInput.look.x * mouseSensitivity * Time.deltaTime;
+        float lookX = playerInput.look.x * GameManager.instance.xSensitivity * Time.deltaTime * 100;
         Quaternion angle = Quaternion.AngleAxis(lookX, Vector3.up);
         Quaternion rotation = transform.localRotation * angle;
         transform.localRotation = rotation;
