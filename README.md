@@ -4,7 +4,7 @@
 ## Running Locally
 
 ```bash
-git clone https://github.com/smfils1/SoS # or clone your own fork
+git clone https://github.com/smfils1/SoS # or fork this repo
 ```
 Open project using UnityHub or Unity. The project is being developed in Unity 2019.3.1f1
 
