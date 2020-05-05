@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -328,14 +329,15 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Samuel: \n- Player, Shooting, and Scoring Mechanics \n- Game Environment
-    \n- CI/CD\n- SoS Website\n\nWarin:\n- Designed menu pages \n- Implemented the
-    \u201CGameOver\u201D menu features\n- Ended game for all end game cases\n\nAbtahi:\n-
+    \n- CI/CD\n- SoS Website\n\nWarin:\n- Designed menu pages / UI\n- Implemented
+    the \u201CGameOver\u201D menu features\n- Ended game for all end game cases\n\nAbtahi:\n-
     Developed enemy pathfinding and tracking\n- Implemented enemy spawning\n- Implementated
-    levels\n\nAfsana:  \n-Audio for gun noises\n- Game trailer"
+    levels\n\nAfsana:  \n-Attempted audio for gun noises\n- Game trailer"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -380,7 +382,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 168
+  m_firstOverflowCharacterIndex: 172
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -404,10 +406,10 @@ MonoBehaviour:
   m_margin: {x: -281.6557, y: 0, z: -260.57956, w: -170.5263}
   m_textInfo:
     textComponent: {fileID: 460702690}
-    characterCount: 355
+    characterCount: 369
     spriteCount: 0
-    spaceCount: 64
-    wordCount: 57
+    spaceCount: 66
+    wordCount: 59
     linkCount: 0
     lineCount: 19
     pageCount: 1
@@ -556,6 +558,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -814,6 +817,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
