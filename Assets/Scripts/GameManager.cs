@@ -104,6 +104,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("About");
     }
 
+    public void Controls()
+    {//Loads Controls Settings
+        SceneManager.LoadScene("Controls");
+    }
+
     public void StartMenu()
     {//Load main menu
         Cursor.lockState = CursorLockMode.None;
