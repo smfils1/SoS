@@ -40,6 +40,8 @@ public class EnemySpawner : MonoBehaviour
         {
             GameObject enemy = Instantiate(EnemyPrefab);
             enemy.transform.position = GetSpawnPoint();
+            Canvas healthUI = enemy.GetComponentInChildren<Canvas>();
+            healthUI.transform.Rotate(0f, 180f, 0f);
             spawnedEnemies.Add(enemy);
             spawnTableCounter++;
         }
