@@ -18,7 +18,7 @@ The game takes place on a stage, as seen in Figure 1. This stage is surrounded b
 
 The player can move in the x & z-axis and rotate as shown in Figure #. If the up, down, left, and right arrow keys are pressed the player moves forward, backward, left, and right respectively at a constant speed. Alternatively, if the player chooses to use a gamepad, the player can use the left stick to move. The enemies can only move in the x & z-axis while chasing the player. To look around, the player must rotate itself. More specifically, the player vision, which is the main camera, has to rotate around the y-axis to look around horizontally. To look vertically the player's vision has to move around the x-axis. Both movements are controlled by sensitivity. The player can rotate horizontally without any limits. However, there is some limitation to the player's ability to rotate vertically. The rotation must be clamped so the player can only look about 90 degrees about its line of vision either up or down, as shown in Figure #.
 
-### Shooting:
+### Shooting:A player need to turn from x-axis to the y-axis for shootings shown in the figure below. Player need to look for the enemy so that player can start shooting. Once player starts shooting then enemy looses their health by counting down numbers which is visible on top of the each enemy. When enemy looses number to all the way zero then it dies. If player is able to shoot and kill all the enemies then player wins the game.
 
 ### Randomization:
 
