@@ -11,7 +11,7 @@ The game takes place on a stage, as seen in Figure 1. This stage is surrounded b
 ## Mechanics
 
 
-### Scoring:
+### Scoring:A player need to turn from x-axis to the y-axis for shootings shown in the figure below. Player need to look for the enemy so that player can start shooting. Once player starts shooting then enemy looses their health by counting down numbers which is visible on top of the each enemy. When enemy looses number to all the way zero then it dies. If player is able to shoot and kill all the enemies then player wins the game.
 
 
 ### Movement:
@@ -26,7 +26,7 @@ The player can move in the x & z-axis and rotate as shown in Figure #. If the up
 ### Progression:
 
 
-## Dynamics
+## Dynamics: We know that to play a game we need players. When players start to play games then we move from Inscribed layer to the Dynamic layer.  Dynamics are the emergent behavior that arises from gameplay, when the Mechanics are put into use. Aesthetics are the emotional response from the players to the gameplay. In the dynamic layer player try to think about a strategy to win the game. Our game is about shoot or survive. Once you are able to shoot all the enemy then player simply wins the game. If player was not able to shoot all the enemy then player dies and fall off from the stage under fire. This is how complex our sos game is. 
 
 
 ## UI & Aesthetics
