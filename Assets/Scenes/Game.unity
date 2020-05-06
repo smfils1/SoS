@@ -291,6 +291,7 @@ MonoBehaviour:
   vision: {fileID: 175246327}
   fireRate: 10
   gunShootingClip: {fileID: 8300000, guid: 087fd7889c4ddc64696ba9adc923f60b, type: 3}
+  gunRecoil: 1
 --- !u!82 &328623553
 AudioSource:
   m_ObjectHideFlags: 0

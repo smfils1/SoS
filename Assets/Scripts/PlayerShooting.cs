@@ -7,6 +7,7 @@ public class PlayerShooting : MonoBehaviour
     public Transform vision;
     public float fireRate = 15f;
     public AudioClip gunShootingClip;
+    public float gunRecoil;
 
     private PlayerInput playerInput;
     private float nextTimeToFire;
@@ -37,6 +38,7 @@ public class PlayerShooting : MonoBehaviour
 
             audioSource.clip = gunShootingClip;
             audioSource.Play();
+            GetComponent<PlayerVision>().RotateRecoil(gunRecoil);
         }
     }
 

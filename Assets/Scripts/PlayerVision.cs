@@ -56,6 +56,17 @@ public class PlayerVision : MonoBehaviour
         transform.localRotation = rotation;
     }
 
+    public void RotateRecoil(float gunRecoil)
+    {
+        Quaternion angle = Quaternion.AngleAxis(gunRecoil, -Vector3.right);
+        Quaternion rotation = vision.localRotation * angle;
+        if (Quaternion.Angle(visionCenter, rotation) < visionLimit)
+        {
+            vision.localRotation = rotation;
+            weapon.localRotation = vision.localRotation;
+        }
+    }
+
 
     // Update is called once per frame
     void Update()
