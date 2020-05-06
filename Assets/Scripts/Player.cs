@@ -7,6 +7,9 @@ public class Player : MonoBehaviour, IKillable
     public static Player instance;
     public Vector3 pos;
     public float health = 100f;
+    public AudioClip damageSoundClip;
+
+    private AudioSource audioSource;
 
     void Awake()
     {//Singleton Pattern
@@ -30,6 +33,11 @@ public class Player : MonoBehaviour, IKillable
         return health <= 0;
     }
 
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         pos = transform.position;
@@ -50,6 +58,8 @@ public class Player : MonoBehaviour, IKillable
         if (other.tag == "Enemy")
         {
             decreaseHealth(10);
+            audioSource.clip = damageSoundClip;
+            audioSource.Play();
         }
     }
 }

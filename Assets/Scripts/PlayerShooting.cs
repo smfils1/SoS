@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-    private PlayerInput playerInput;
     public Transform vision;
     public float fireRate = 15f;
+    public AudioClip gunShootingClip;
+
+    private PlayerInput playerInput;
     private float nextTimeToFire;
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
-    //Initialize fields
-            playerInput = GetComponent<PlayerInput>();
-
+        //Initialize fields
+        playerInput = GetComponent<PlayerInput>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void ShootingTarget()
@@ -28,11 +31,13 @@ public class PlayerShooting : MonoBehaviour
                 
                 if (item.tag == "Enemy") {
                     IKillable enemy = item.GetComponent<IKillable>();
-                    enemy.decreaseHealth(10);
-
+                    enemy.decreaseHealth(10 * (GameManager.instance.level / 10));
                 }
             }
-        }       
+
+            audioSource.clip = gunShootingClip;
+            audioSource.Play();
+        }
     }
 
     // Update is called once per frame

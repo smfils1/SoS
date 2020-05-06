@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     public float ySensitivity { get; private set; }
     public TextMeshProUGUI xSensitivityUI;
     public TextMeshProUGUI ySensitivityUI;
+
+    public bool DebugMode;
+    public int DebugStartLevel;
     //public GameObject Game_Over;
 
 
@@ -51,7 +54,14 @@ public class GameManager : MonoBehaviour
         //Game_Over.SetActive(false);
         isGameOver = false;
         time = maxTime;
-        level = 1;
+        if (DebugMode && DebugStartLevel>0)
+        {
+            level = DebugStartLevel;
+        }
+        else
+        {
+            level = 1;
+        }
         StartCoroutine("Clock");
 
 
