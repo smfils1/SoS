@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,8 +15,8 @@ public class GameManager : MonoBehaviour
     public int maxTime = 30;
     public float xSensitivity { get; private set; }
     public float ySensitivity { get; private set; }
-    public Text xSensitivityUI;
-    public Text ySensitivityUI;
+    public TextMeshProUGUI xSensitivityUI;
+    public TextMeshProUGUI ySensitivityUI;
     //public GameObject Game_Over;
 
 
