@@ -11,7 +11,7 @@ The game takes place on a stage, as seen in Figure 1. This stage is surrounded b
 ## Mechanics
 
 
-### Scoring:A player need to turn from x-axis to the y-axis for shootings shown in the figure below. Player need to look for the enemy so that player can start shooting. Once player starts shooting then enemy looses their health by counting down numbers which is visible on top of the each enemy. When enemy looses number to all the way zero then it dies. If player is able to shoot and kill all the enemies then player wins the game.
+### Scoring:
 
 
 ### Movement:
