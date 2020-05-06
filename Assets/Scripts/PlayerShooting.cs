@@ -31,7 +31,7 @@ public class PlayerShooting : MonoBehaviour
                 
                 if (item.tag == "Enemy") {
                     IKillable enemy = item.GetComponent<IKillable>();
-                    enemy.decreaseHealth(10 * (GameManager.instance.level / 10));
+                    enemy.decreaseHealth(10 * ((GameManager.instance.level / 10) + 1));
                 }
             }
 
