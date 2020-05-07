@@ -52,6 +52,16 @@ public class GameManager : MonoBehaviour
     {//Initialize the Game
        // Game_Over = GameObject.Find("GameOver");
         //Game_Over.SetActive(false);
+
+        if (SceneManager.GetActiveScene().name == "Game")
+        {
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.visible = true;
+        }
+
         isGameOver = false;
         time = maxTime;
         if (DebugMode && DebugStartLevel>0)
@@ -71,11 +81,10 @@ public class GameManager : MonoBehaviour
     IEnumerator Clock()
     {
         if (SceneManager.GetActiveScene().name == "Game")
-
         {
             while (true)
-        {
-            yield return new WaitForSeconds(1);
+            {
+                yield return new WaitForSeconds(1);
             
                 if (time % maxTime == 0 && time != 30)
                 {
