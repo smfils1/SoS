@@ -1,5 +1,10 @@
 # Game Design Document
 
+## AS/WA LABS
+ - Project Manager: Samuel Fils
+ - Developers: Afsana Akter, Abtahi Chowdhury, and Warin Wohab 
+
+
 ## Summary
 
 Shoot or Survive is an open-source web game of survival. You're either the one shooting or the one running away. The choice is yours. This plug and play FPS web game is a battle between you and your enemies that require accuracy & speed. The ability to attack or avoid enemies with different controls leads to a unique web experience.
