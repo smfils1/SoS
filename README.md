@@ -10,7 +10,7 @@ Open project using UnityHub or Unity. The project is being developed in Unity 20
 
 ## CI/CD
 
-We are using Github Actions & Github Pages to build & deploy [SoS](https://smfils1.github.io/SoS-web/)
+We are using Github Actions & Github Pages to build & deploy [Official SoS Website](https://smfils1.github.io/SoS-web/) from the [SoS Website Repo](https://github.com/smfils1/SoS-web)
 
 ![drawing](https://i.imgur.com/5mIhcVA.png)
 
