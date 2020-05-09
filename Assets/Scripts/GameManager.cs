@@ -179,7 +179,7 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         isGameOver = true;
-        if(isGameOver == true)
+        if(isGameOver)
         {
             isGameOver = false;
             Debug.Log("GAME OVER");
@@ -198,10 +198,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {//Listen for request for close app and main menu. 
-        if (Input.GetKeyDown(KeyCode.Escape))
+       /* if (Input.GetKeyDown(KeyCode.Escape))
         {
             ExitGame();
-        }
+        } */
         if (Input.GetKeyDown(KeyCode.M))
         {
             StartMenu();
